@@ -12,6 +12,8 @@
 
 class Comment < ApplicationRecord
   def commenter
+    #belongs_to(:director, {:foreign_key => "", :class_name => ""})
+
     my_id = self.author_id
     matching_users = User.where({ :id => my_id })
     the_user = matching_users.at(0)
